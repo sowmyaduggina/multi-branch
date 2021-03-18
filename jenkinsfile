@@ -5,12 +5,14 @@ pipeline{
      stages {
          
          stage('build') {
+          label 'testgroup'
                
                steps{
                  echo 'building the application...'
               }
           }
        stage('test') {
+        label 'testgroup'
        
             steps{
               echo 'testing the application...'
@@ -18,7 +20,7 @@ pipeline{
           }   
     
     stage('deploy') {
-    
+     label 'testgroup'
        steps {
           echo 'deploying the application...'
        }
